@@ -1,0 +1,72 @@
+<div class="row">
+
+    <div class="span10 offset1">
+
+        <h1>Webhooks</h1>
+
+        <?=$this->draw('admin/menu');?>
+
+        <p class="explanation">
+            Webhooks let you syndicate content to external applications, like Slack, very simply. The content of your
+            post is sent to an external URL.
+        </p>
+        <p>
+            When content is syndicated via webhooks, the external URL is sent the following data:
+        </p>
+        <ul>
+            <li><em>text</em>: the text of the update</li>
+            <li><em>username</em>: the username of the account-holder</li>
+            <li><em>icon_url</em>: the URL of the user's icon</li>
+            <li><em>content_type</em>: the type of content being sent</li>
+        </ul>
+
+    </div>
+
+</div>
+<div class="row">
+    <div class="span10 offset1">
+
+        <h2>Modify webhooks</h2>
+
+        <form action="" method="post">
+
+            <?php
+
+                if (!empty(\Idno\Core\site()->config()->webhook_syndication)) {
+                    foreach(\Idno\Core\site()->config()->webhook_syndication as $webhook) {
+
+?>
+                        <p>
+                            <input type="text" name="titles[]" value="<?=htmlspecialchars($webhook['title'])?>" placeholder="Name of this webhook" class="span3">
+                            <input type="text" name="webhooks[]" value="<?=htmlspecialchars($webhook['url'])?>" placeholder="Webhook URL" class="span5">
+                            <small><a href="#" onclick="$(this).closest('p').remove(); return false;">- Remove</a></small>
+                        </p>
+<?php
+
+                    }
+                }
+
+            ?>
+            <p>
+                <input type="text" value="" name="titles[]" placeholder="Name of this webhook" class="span3">
+                <input type="text" value="" name="webhooks[]" placeholder="Webhook URL" class="span5">
+                <small><a href="#" onclick="$(this).closest('p').remove(); return false;">- Remove</a></small>
+            </p>
+            <div id="morefields"></div>
+            <p><a href="#" onclick="$('#morefields').append($('#field_template').html());">+ Add a webhook</a></p>
+            <p>
+                <?= \Idno\Core\site()->actions()->signForm('/admin/webhooks/') ?>
+                <input class="btn btn-primary" value="Save" type="submit">
+            </p>
+
+        </form>
+        <div id="field_template" style="display:none">
+            <p>
+                <input type="text" value="" name="titles[]" placeholder="Name of this webhook" class="span3">
+                <input type="text" value="" name="webhooks[]" placeholder="Webhook URL" class="span5">
+                <small><a href="#" onclick="$(this).closest('p').remove(); return false;">- Remove</a></small>
+            </p>
+        </div>
+
+    </div>
+</div>
