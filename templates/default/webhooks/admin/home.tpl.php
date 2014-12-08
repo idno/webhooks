@@ -52,10 +52,10 @@
             <p>
                 <input type="text" value="" name="titles[]" placeholder="Name of this webhook" class="span3">
                 <input type="text" value="" name="webhooks[]" placeholder="Webhook URL" class="span5">
-                <small><a href="#" onclick="$(this).closest('p').remove(); return false;">- Remove</a></small>
+                <small><a href="#" onclick="$(this).closest('p').remove(); return false;"><icon class="icon-remove"></icon> Remove this Webhook</a></small>
             </p>
             <div id="morefields"></div>
-            <p><a href="#" onclick="$('#morefields').append($('#field_template').html());">+ Add another Webhook</a></p>
+            <p><a href="#" onclick="$('#morefields').append($('#field_template').html());"><icon class="icon-plus"></icon> Add another Webhook</a></p>
             <p>
                 <?= \Idno\Core\site()->actions()->signForm('/admin/webhooks/') ?>
                 <input class="btn btn-primary" value="Save" type="submit">
