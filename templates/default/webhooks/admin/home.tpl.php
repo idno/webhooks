@@ -28,7 +28,7 @@
 <div class="row">
     <div class="span10 offset1">
 
-        <h2>Create a new Webhook</h2>
+        <h3>Create a new Webhook</h3>
 
         <form action="" method="post">
 
