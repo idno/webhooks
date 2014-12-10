@@ -58,7 +58,7 @@
             <p><a href="#" onclick="$('#morefields').append($('#field_template').html());"><icon class="icon-plus"></icon> Add another Webhook</a></p>
             <p>
                 <?= \Idno\Core\site()->actions()->signForm('/admin/webhooks/') ?>
-                <input class="btn btn-primary" value="Save" type="submit">
+                <input class="btn btn-primary" value="Save Webhooks" type="submit">
             </p>
 
         </form>
