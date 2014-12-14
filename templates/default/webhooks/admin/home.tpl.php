@@ -1,10 +1,9 @@
 <div class="row">
 
     <div class="span10 offset1">
+	            <?=$this->draw('admin/menu');?>
 
         <h1>Webhooks</h1>
-
-        <?=$this->draw('admin/menu');?>
 
         <p class="explanation">
             Webhooks let you syndicate content to external applications very simply. The content of your
