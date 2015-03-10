@@ -28,6 +28,13 @@
                             \Idno\Core\site()->syndication()->registerServiceAccount('webhooks', $hook['url'], $hook['title']);
                         }
                     }
+                    if (\Idno\Core\site()->session()->isLoggedIn()) {
+                        if (!empty(\Idno\Core\site()->session()->currentUser()->webhook_syndication)) {
+                            foreach(\Idno\Core\site()->session()->currentUser()->webhook_syndication as $hook) {
+                                \Idno\Core\site()->syndication()->registerServiceAccount('webhooks', $hook['url'], $hook['title']);
+                            }
+                        }
+                    }
                 }
 
                 $hook_function = function(\Idno\Core\Event $event) {
@@ -69,7 +76,8 @@
              */
             function hasWebhooks()
             {
-                if (!empty(\Idno\Core\site()->config()->webhook_syndication)) {
+                if (!empty(\Idno\Core\site()->config()->webhook_syndication) ||
+                    (\Idno\Core\site()->session()->isLoggedIn() && !empty(\Idno\Core\site()->session()->currentUser()->webhook_syndication))) {
                     return true;
                 }
                 return false;
