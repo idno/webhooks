@@ -3,6 +3,8 @@ Webhooks for Known
 
 This plugin provides syndication support for Known to any arbitary webhook URL (eg a Slack channel).
 
+**DEPRECATED** - This has been pulled into the core repository at https://github.com/idno/known/
+
 Installation
 ------------
 
