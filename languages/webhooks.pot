@@ -1,8 +1,8 @@
-#: ./Pages/Admin.php:15
+#: ./Pages/Admin.php:17
 msgid "Webhooks"
 msgstr ""
 
-#: ./Pages/Admin.php:38
+#: ./Pages/Admin.php:41
 msgid "%s doesn't seem to be a valid URL."
 msgstr ""
 
@@ -68,9 +68,5 @@ msgstr ""
 
 #: ./templates/default/webhooks/admin/home.tpl.php:76
 msgid "Save Webhooks"
-msgstr ""
-
-#: ./templates/default/webhooks/admin/home.tpl.php:84
-msgid "Remove"
 msgstr ""
 

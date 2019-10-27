@@ -78,11 +78,17 @@
 
         </form>
         <div id="field_template" style="display:none">
-            <p>
-                <input type="text" value="" name="titles[]" placeholder="<?php echo \Idno\Core\Idno::site()->language()->_('Name of this webhook'); ?>" class="span3">
-                <input type="text" value="" name="webhooks[]" placeholder="<?php echo \Idno\Core\Idno::site()->language()->_('Webhook URL'); ?>" class="span5">
-                <small><a href="#" onclick="$(this).closest('p').remove(); return false;">- <?php echo \Idno\Core\Idno::site()->language()->_('Remove'); ?></a></small>
-            </p>
+            <div class="row">
+                <div class="col-md-4">
+		    <input type="text" value="" name="titles[]" placeholder="<?php echo \Idno\Core\Idno::site()->language()->_('Name of this webhook'); ?>" class="form-control">
+		</div>
+                <div class="col-md-5">
+		    <input type="text" value="" name="webhooks[]" placeholder="<?php echo \Idno\Core\Idno::site()->language()->_('Webhook URL'); ?>"  class="form-control">
+		</div>
+                <div class="col-md-3" style="margin-top: 0.75em">
+		    <small><a href="#" onclick="$(this).closest('.row').remove(); return false;"><i class="fa fa-times"></i> <?php echo \Idno\Core\Idno::site()->language()->_('Remove this Webhook'); ?></a></small>
+		</div>
+            </div>
         </div>
 
     </div>
